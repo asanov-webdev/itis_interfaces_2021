@@ -11,15 +11,11 @@ def init_pygame(pygame):
     pygame.display.set_icon(icon)
 
 
-def get_text_objects(digits, positions, center, fonts=[]):
+def get_text_objects(digits, positions, center, pygame, font_size):
     text_objects = []
 
     for i in range(len(digits)):
-        if len(fonts) > 1:
-            font = fonts[i]
-        else:
-            font = fonts[0]
-
+        font = pygame.font.Font(FONT, font_size)
         text = font.render(digits[i], True, COLORS['black'])
 
         if center:
@@ -30,14 +26,3 @@ def get_text_objects(digits, positions, center, fonts=[]):
         text_objects.append({'text': text, 'text_rect': text_rect})
 
     return text_objects
-
-
-def generate_random_fonts(count, pygame):
-    fonts = []
-
-    for i in range(count):
-        font_size = random.randint(FONT_SIZE_MIN, FONT_SIZE_MAX)
-        font = pygame.font.Font(FONT, font_size)
-        fonts.append(font)
-
-    return fonts

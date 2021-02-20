@@ -14,3 +14,5 @@ ROMAN_BY_ARABIC = {
 
 # ASCII Code "64" matches "@" symbol
 PICTOGRAM_SYMBOL_ASCII_CODE = 64
+
+DIGITS_AMOUNT = 7
